@@ -29,8 +29,6 @@ var UploadComponent = (function () {
             console.log(res);
             _this.isLoading = false;
             _this.dataService.data = JSON.parse(res.text());
-            console.log(res.text());
-            console.log("-->" + _this.dataService.data);
             _this.navigateToResultPage();
         });
     };
