@@ -16,7 +16,7 @@ export class DispatcherService {
         var headers = new Headers();
         headers.append("Content-Type", 'application/json');
 
-        return this.httpClient.post('http://localhost:8080/files',
+        return this.httpClient.post('http://172.31.40.110:8080/files',
             data, headers)
             .map((res: Response) => {
                 return res;
@@ -27,7 +27,7 @@ export class DispatcherService {
         var headers = new Headers();
         headers.append("Content-Type", 'application/json');
 
-        return this.httpClient.post('http://localhost:8080/upload',
+        return this.httpClient.post('http://172.31.40.110:8080/upload',
             data, headers)
             .map((res: Response) => {
                 return res;
@@ -38,7 +38,7 @@ export class DispatcherService {
         var headers = new Headers();
         headers.append('Content-Type', 'multipart/form-data');
         headers.append('Accept', 'application/json');
-        return this.httpClient.post('http://localhost:8080/download',
+        return this.httpClient.post('http://172.31.40.110:8080/download',
             data, headers)
             .map((res: Response) => {
                 return res;
