@@ -26,8 +26,6 @@ export class UploadComponent {
                 console.log(res);
                 this.isLoading = false;
                 this.dataService.data = JSON.parse(res.text());
-                console.log(res.text());
-                console.log("-->"+this.dataService.data);
                 this.navigateToResultPage();
             });
     }

@@ -10,13 +10,17 @@ import { UploadForm } from './upload-form';
 @Injectable()
 export class DispatcherService {
 
-    constructor(private httpClient: Http) { }
+    baseUrl : String;
+    constructor(private httpClient: Http) { 
+        console.log('href : ' + window.location.href);
+        this.baseUrl = window.location.origin.replace(window.location.port, '8080');
+    }
 
     generateFiles(data: GenerateForm): Observable<Response> {
         var headers = new Headers();
         headers.append("Content-Type", 'application/json');
 
-        return this.httpClient.post('http://172.31.40.110:8080/files',
+        return this.httpClient.post(this.baseUrl + '/files',
             data, headers)
             .map((res: Response) => {
                 return res;
@@ -27,7 +31,7 @@ export class DispatcherService {
         var headers = new Headers();
         headers.append("Content-Type", 'application/json');
 
-        return this.httpClient.post('http://172.31.40.110:8080/upload',
+        return this.httpClient.post(this.baseUrl  + '/upload',
             data, headers)
             .map((res: Response) => {
                 return res;
@@ -38,7 +42,7 @@ export class DispatcherService {
         var headers = new Headers();
         headers.append('Content-Type', 'multipart/form-data');
         headers.append('Accept', 'application/json');
-        return this.httpClient.post('http://172.31.40.110:8080/download',
+        return this.httpClient.post(this.baseUrl  + '/download',
             data, headers)
             .map((res: Response) => {
                 return res;
