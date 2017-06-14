@@ -19,10 +19,14 @@ export class GenerateComponent {
         this.router.navigate(['/upload']);
     }
 
-    //data: String;
+    clearFolder(){
+        this.dispatcherService.clearFolder()
+            .subscribe(res => {
+                console.log('clear folder completed');
+            });
+    }
 
     onSubmit(data:GenerateForm) {
-       // this.data = JSON.stringify(data, null, 2);
         console.log(data);
 
         this.isLoading = true;
