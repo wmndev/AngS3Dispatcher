@@ -14,12 +14,12 @@ export class ResultPageComponent implements OnInit{
         private router: Router) { }
 
     data: any
-
+ 
     ngOnInit(){
         this.data = this.dataService.data;
         console.log('********  ' + this.data);
-        console.log(this.data[0].times);
-        console.log(this.data[0].stats);
+        //console.log(this.data[0].times);
+        //console.log(this.data[0].stats);
     }
 
 

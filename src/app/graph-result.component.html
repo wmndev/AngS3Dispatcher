@@ -2,10 +2,15 @@
 <br/>
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6">
       <div style="display: block;">
-        <canvas baseChart width="350" height="350" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
-          [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType">
+        <canvas baseChart width="400" height="300" 
+          [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
+            [colors]="lineChartColors">
         </canvas>
       </div>
     </div>
@@ -21,5 +26,9 @@
         </tr>
       </table>
     </div>
+  </div>
+  <div class="row">
+    <a (click)="navigateToHome()" class="btn btn-default">Home</a>
+
   </div>
 </div>
